@@ -12,7 +12,7 @@ export function App() {
       <Header />
 
       <main className="mx-auto flex max-w-350 flex-col gap-8 pb-8">
-        {/* <HeroSection /> */}
+        <HeroSection />
         {/* <IdentificationSection /> */}
         {/* <AboutMeSection /> */}
       </main>

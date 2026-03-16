@@ -6,7 +6,7 @@ import linesImage from '../assets/images/lines.svg';
 export function HeroSection() {
   return (
     <div className="relative flex min-h-dvh w-full flex-col items-center justify-center gap-12 px-4 pt-28 xl:flex-row">
-      <div className="bg-primary/4 absolute -top-20 -left-40 h-160 w-160 rounded-full blur-3xl" />
+      <div className="bg-primary/4 absolute -top-20 -left-40 hidden h-160 w-160 rounded-full blur-3xl sm:flex" />
 
       <div className="relative z-10 flex max-w-200 flex-col items-center justify-center xl:items-start">
         <div className="mt-4 mb-12 xl:mt-0">
@@ -51,7 +51,7 @@ export function HeroSection() {
             variants={{
               hover: { scale: 1.04 },
             }}
-            className="bg-primary relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-xl font-medium sm:w-auto"
+            className="bg-primary relative flex w-full cursor-pointer flex-col items-center justify-center gap-1 overflow-hidden rounded-full px-6 py-3 text-lg font-medium sm:w-auto sm:flex-row sm:text-xl"
           >
             Quero aprender o método <strong>INKTENSITY</strong>
             <motion.span

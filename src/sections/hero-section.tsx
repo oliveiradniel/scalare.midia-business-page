@@ -53,7 +53,8 @@ export function HeroSection() {
             }}
             className="bg-primary relative flex w-full cursor-pointer flex-col items-center justify-center gap-1 overflow-hidden rounded-full px-6 py-3 text-lg font-medium sm:w-auto sm:flex-row sm:text-xl"
           >
-            Quero aprender o método <strong>INKTENSITY</strong>
+            Quero aprender o método{' '}
+            <strong className="uppercase">inktensity</strong>
             <motion.span
               variants={{
                 initial: { x: '-100%' },

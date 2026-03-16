@@ -42,13 +42,13 @@ export function IdentificationSection() {
 
   return (
     <div className="px-4">
-      <h2 className="text-primary mx-auto w-full max-w-200 text-center text-3xl">
+      <h2 className="mx-auto w-full max-w-200 text-center text-3xl text-white">
         Você tem algum desses{' '}
-        <i className="font-playfair font-bold">desafios</i> atualmente como
-        tatuador?
+        <i className="font-playfair text-primary font-bold">desafios</i>{' '}
+        atualmente como tatuador?
       </h2>
 
-      <div className="bg-background border-primary/20 mx-auto mt-12 flex w-full max-w-220 flex-col gap-4 rounded-lg border p-8 md:flex-row">
+      <div className="bg-background border-primary/20 mx-auto mt-12 flex w-full max-w-240 flex-col gap-4 rounded-lg border p-8 md:flex-row md:gap-12">
         <ul className="flex flex-col gap-3">
           {challenges.slice(0, 5).map((challenge) => (
             <li className="flex items-start gap-2">

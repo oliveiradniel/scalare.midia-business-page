@@ -5,11 +5,6 @@ export const navOptions = [
     href: '#home',
   },
   {
-    id: 'method',
-    label: 'Método',
-    href: '#method',
-  },
-  {
     id: 'modules',
     label: 'Módulos',
     href: '#modules',

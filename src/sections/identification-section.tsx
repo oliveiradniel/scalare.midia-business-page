@@ -44,17 +44,35 @@ export function IdentificationSection() {
 
   return (
     <div className="px-4">
-      <h2 className="mx-auto w-full max-w-200 text-center text-3xl text-white">
+      <motion.h2
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+          },
+        }}
+        viewport={{ once: true }}
+        className="mx-auto w-full max-w-200 text-center text-3xl text-white"
+      >
         Você tem algum desses{' '}
         <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text font-bold text-transparent">
           desafios
         </i>{' '}
         atualmente como tatuador?
-      </h2>
+      </motion.h2>
 
       <motion.div
+        initial={{ opacity: 0 }}
         animate={{
           y: [0, -12, 0],
+        }}
+        whileInView={{
+          opacity: 1,
+          transition: {
+            duration: 1,
+          },
         }}
         transition={{
           duration: 3,
@@ -83,18 +101,40 @@ export function IdentificationSection() {
       </motion.div>
 
       <div className="mx-auto mt-16 flex max-w-220 flex-col items-center gap-8 sm:flex-row">
-        <h3 className="text-2xl font-medium text-white">
+        <motion.h3
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true }}
+          className="text-2xl font-medium text-white"
+        >
           Se sim, fique tranquilo!
-        </h3>
+        </motion.h3>
 
-        <p className="flex-1 text-gray-400">
+        <motion.p
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true }}
+          className="flex-1 text-gray-400"
+        >
           Isso acontece por que a maioria dos tatuadores não sabe usar o
           Instagram de forma estratégica. No meu curso você aprende desde{' '}
           <i className="text-primary font-playfair font-medium">
             organização do seu perfil a como gerar urgência
           </i>{' '}
           para fechar uma tatuagem com o <strong>preço que você merece</strong>.
-        </p>
+        </motion.p>
       </div>
 
       <div className="bg-primary/40 my-8 h-[0.5px] w-full mask-x-from-90%" />

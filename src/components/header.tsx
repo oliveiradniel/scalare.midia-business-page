@@ -7,7 +7,17 @@ import { Select } from './select';
 
 export function Header() {
   return (
-    <header className="fixed z-20 w-full p-4">
+    <motion.header
+      initial={{ opacity: 0, y: -80 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+        },
+      }}
+      className="fixed z-20 w-full p-4"
+    >
       <div className="border-primary/12 bg-background/40 mx-auto flex h-20 max-w-350 items-center justify-between rounded-full border p-4 backdrop-blur-2xl">
         <div className="flex items-center gap-8">
           <img
@@ -60,6 +70,6 @@ export function Header() {
           Comprar agora
         </motion.a>
       </div>
-    </header>
+    </motion.header>
   );
 }

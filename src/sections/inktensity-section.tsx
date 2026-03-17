@@ -199,7 +199,7 @@ export function InktensitySection() {
         ))}
       </div>
 
-      <h2 className="mt-8 text-center text-5xl text-white">
+      <h2 className="mt-8 text-center text-4xl text-white">
         Está achando que acabou? Temos alguns{' '}
         <i className="font-playfair text-primary">bônus</i>
       </h2>

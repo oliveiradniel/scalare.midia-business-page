@@ -15,11 +15,6 @@ export const navOptions = [
     href: '#testimonials',
   },
   {
-    id: 'course',
-    label: 'Curso',
-    href: '#course',
-  },
-  {
     id: 'faq',
     label: 'FAQ',
     href: '#faq',

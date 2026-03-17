@@ -4,6 +4,7 @@ import { WhatsAppButton } from './components/whatsapp-bottom';
 import { HeroSection } from './sections/hero-section';
 import { IdentificationSection } from './sections/identification-section';
 import { InktensitySection } from './sections/inktensity-section';
+import { OfferSection } from './sections/offer-section';
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
         <HeroSection />
         <IdentificationSection />
         <InktensitySection />
+        <OfferSection />
         {/* <AboutMeSection /> */}
       </main>
     </div>

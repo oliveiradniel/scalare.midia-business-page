@@ -13,7 +13,7 @@ export function OfferSection() {
 
   return (
     <div className="flex flex-col items-center px-4">
-      <div className="bg-primary/40 my-8 h-[0.5px] w-full" />
+      <div className="bg-primary/40 my-8 h-[0.6px] w-full mask-x-from-90%" />
 
       <small className="text-center text-gray-400 before:mr-2 before:content-['['] after:ml-2 after:content-[']']">
         NÃO PERCA MAIS TEMPO E DINHEIRO!

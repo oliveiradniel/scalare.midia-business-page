@@ -44,7 +44,9 @@ export function IdentificationSection() {
     <div className="px-4">
       <h2 className="mx-auto w-full max-w-200 text-center text-3xl text-white">
         Você tem algum desses{' '}
-        <i className="font-playfair text-primary font-bold">desafios</i>{' '}
+        <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text font-bold text-transparent">
+          desafios
+        </i>{' '}
         atualmente como tatuador?
       </h2>
 
@@ -83,7 +85,7 @@ export function IdentificationSection() {
         </p>
       </div>
 
-      <div className="bg-primary/40 my-8 h-[0.5px] w-full" />
+      <div className="bg-primary/40 my-8 h-[0.5px] w-full mask-x-from-90%" />
     </div>
   );
 }

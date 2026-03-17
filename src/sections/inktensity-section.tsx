@@ -160,7 +160,11 @@ export function InktensitySection() {
       </div>
 
       <h2 className="mt-8 text-center text-5xl text-white">
-        O que você vai <i className="font-playfair text-primary">aprender</i>?
+        O que você vai{' '}
+        <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text text-transparent">
+          aprender
+        </i>
+        ?
       </h2>
 
       <div className="flex w-full flex-col gap-12 rounded-lg bg-white/6 mask-r-from-96% mask-l-from-90% p-8 md:gap-4">
@@ -201,7 +205,9 @@ export function InktensitySection() {
 
       <h2 className="mt-8 text-center text-4xl text-white">
         Está achando que acabou? Temos alguns{' '}
-        <i className="font-playfair text-primary">bônus</i>
+        <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text text-transparent">
+          bônus
+        </i>
       </h2>
 
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">

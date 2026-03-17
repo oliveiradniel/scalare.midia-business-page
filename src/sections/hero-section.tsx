@@ -5,7 +5,10 @@ import linesImage from '../assets/images/lines.svg';
 
 export function HeroSection() {
   return (
-    <div className="relative flex min-h-dvh w-full flex-col items-center justify-center gap-12 px-4 pt-28 xl:flex-row">
+    <div
+      id="home"
+      className="relative flex min-h-dvh w-full flex-col items-center justify-center gap-12 px-4 pt-28 xl:flex-row"
+    >
       <div className="bg-primary/4 absolute -top-20 -left-40 hidden h-160 w-160 rounded-full blur-3xl sm:flex" />
 
       <div className="relative z-10 flex max-w-200 flex-col items-center justify-center xl:items-start">
@@ -44,7 +47,8 @@ export function HeroSection() {
         </ul>
 
         <div className="mt-16 flex w-full flex-col gap-2 sm:flex-row sm:justify-center xl:justify-start">
-          <motion.button
+          <motion.a
+            href="#offer"
             initial="initial"
             whileHover="hover"
             whileTap={{ scale: 0.97 }}
@@ -72,7 +76,7 @@ export function HeroSection() {
                   'linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6), transparent 100%)',
               }}
             />
-          </motion.button>
+          </motion.a>
 
           <motion.button
             whileTap={{ scale: 0.97 }}

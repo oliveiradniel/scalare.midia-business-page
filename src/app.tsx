@@ -1,7 +1,7 @@
 import { Header } from './components/header';
 import { WhatsAppButton } from './components/whatsapp-bottom';
 import { FAQSection } from './sections/faq-section';
-// import { AboutMeSection } from './sections/about-me-section';
+import { AboutMeSection } from './sections/about-me-section';
 import { HeroSection } from './sections/hero-section';
 import { IdentificationSection } from './sections/identification-section';
 import { InktensitySection } from './sections/inktensity-section';
@@ -20,7 +20,7 @@ export function App() {
         <InktensitySection />
         <OfferSection />
         <FAQSection />
-        {/* <AboutMeSection /> */}
+        <AboutMeSection />
       </main>
     </div>
   );

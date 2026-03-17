@@ -12,7 +12,7 @@ export function OfferSection() {
   ];
 
   return (
-    <div className="flex flex-col items-center px-4">
+    <div id="offer" className="flex scroll-mt-20 flex-col items-center px-4">
       <div className="bg-primary/40 my-8 h-[0.6px] w-full mask-x-from-90%" />
 
       <small className="text-center text-gray-400 before:mr-2 before:content-['['] after:ml-2 after:content-[']']">
@@ -104,7 +104,7 @@ export function OfferSection() {
 
             <button
               type="button"
-              className="bg-primary flex cursor-pointer items-center justify-center rounded-lg px-2 py-1 text-lg font-bold"
+              className="bg-primary flex cursor-pointer items-center justify-center rounded-lg px-2 py-1 text-lg font-medium"
             >
               <span className="flex-1">Quero testar agora!</span>
               <img

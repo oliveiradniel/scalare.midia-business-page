@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 import errorBox from '../assets/images/error-box.svg';
 
 export function IdentificationSection() {
@@ -50,7 +52,17 @@ export function IdentificationSection() {
         atualmente como tatuador?
       </h2>
 
-      <div className="bg-background border-primary/20 mx-auto mt-12 flex w-full max-w-240 flex-col gap-4 rounded-lg border p-8 md:flex-row md:gap-12">
+      <motion.div
+        animate={{
+          y: [0, -12, 0],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="bg-background border-primary/20 mx-auto mt-12 flex w-full max-w-240 flex-col gap-4 rounded-lg border p-8 md:flex-row md:gap-12"
+      >
         <ul className="flex flex-col gap-3">
           {challenges.slice(0, 5).map((challenge) => (
             <li className="flex items-start gap-2">
@@ -68,7 +80,7 @@ export function IdentificationSection() {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
 
       <div className="mx-auto mt-16 flex max-w-220 flex-col items-center gap-8 sm:flex-row">
         <h3 className="text-2xl font-medium text-white">

@@ -104,7 +104,10 @@ export function InktensitySection() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-16 px-4">
+    <div
+      id="modules"
+      className="flex scroll-mt-40 flex-col items-center gap-16 px-4"
+    >
       <div className="flex items-center gap-4">
         {badges.map((badge) => (
           <span
@@ -130,13 +133,14 @@ export function InktensitySection() {
             WhatsApp.
           </p>
 
-          <button
+          <a
+            href="#offer"
             type="button"
             className="bg-primary flex items-center justify-center gap-4 rounded-full px-6 py-3 text-lg font-medium"
           >
             Quero adquirir agora
             <ArrowDownIcon className="text-background size-6" />
-          </button>
+          </a>
         </div>
 
         <div className="flex flex-1 flex-col justify-between gap-4">

@@ -50,7 +50,7 @@ export function FAQSection() {
   return (
     <div
       id="faq"
-      className="mt-16 flex flex-col items-center gap-16 px-4 lg:flex-row"
+      className="mt-16 flex scroll-mt-40 flex-col items-center gap-16 px-4 lg:flex-row"
     >
       <div className="flex flex-1 flex-col gap-2 lg:gap-16">
         <div className="flex flex-col items-center gap-2 lg:items-start">

@@ -1,5 +1,6 @@
 import { Header } from './components/header';
 import { WhatsAppButton } from './components/whatsapp-bottom';
+import { FAQSection } from './sections/faq-section';
 // import { AboutMeSection } from './sections/about-me-section';
 import { HeroSection } from './sections/hero-section';
 import { IdentificationSection } from './sections/identification-section';
@@ -18,6 +19,7 @@ export function App() {
         <IdentificationSection />
         <InktensitySection />
         <OfferSection />
+        <FAQSection />
         {/* <AboutMeSection /> */}
       </main>
     </div>

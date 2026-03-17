@@ -18,41 +18,143 @@ export function HeroSection() {
       <div className="bg-primary/4 absolute -top-20 -left-40 hidden h-160 w-160 rounded-full blur-3xl sm:flex" />
 
       <div className="relative z-10 flex max-w-200 flex-col items-center justify-center xl:items-start">
-        <div className="mt-4 mb-12 xl:mt-0">
-          <span className="from-primary/20 rounded-full border border-white/10 bg-linear-to-r to-white/20 px-4 py-3 text-base font-medium text-white">
-            Este pode ser o passo que te falta
-          </span>
-        </div>
+        <motion.span
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true }}
+          className="from-primary/20 mt-4 mb-12 rounded-full border border-white/10 bg-linear-to-r to-white/20 px-4 py-3 text-base font-medium text-white xl:mt-0"
+        >
+          Este pode ser o passo que te falta
+        </motion.span>
 
-        <h1 className="mb-8 text-center text-4xl font-medium text-white sm:text-5xl xl:text-start">
+        <motion.h1
+          initial={{ opacity: 0, filter: 'blur(4px)' }}
+          whileInView={{
+            opacity: 1,
+            filter: 'blur(0px)',
+            transition: {
+              duration: 1.6,
+            },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mb-8 text-center text-4xl font-medium text-white sm:text-5xl xl:text-start"
+        >
           É um bom tatuador?{' '}
           <i className="text-primary font-playfair">
             Sabe que tem as habilidades
           </i>
           , mas ainda te faltam clientes pra exercer isso?
-        </h1>
+        </motion.h1>
 
-        <p className="text-center text-xl text-gray-400 xl:text-start">
+        <motion.p
+          initial={{
+            opacity: 0,
+            x: -80,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center text-xl text-gray-400 xl:text-start"
+        >
           Saiba como tatuadores estão lotando a agenda usando Instagram e
           anúncios simples. Mesmo com poucos seguidores e sem depender apenas de
           indicações.
-        </p>
+        </motion.p>
 
         <ul className="mt-4 list-inside list-disc text-gray-400">
-          <li>
+          <motion.li
+            initial={{
+              opacity: 0,
+              x: -80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
             Aprenda a{' '}
             <i className="text-primary font-medium">atrair clientes</i> todos os
             dias
-          </li>
-          <li>
+          </motion.li>
+
+          <motion.li
+            initial={{
+              opacity: 0,
+              x: -80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 1,
+                delay: 0.4,
+              },
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
             Gere{' '}
             <i className="text-primary font-medium">pedidos de orçamento</i> no
             Direct e WhatsApp
-          </li>
-          <li>Mesmo que você não entenda nada de marketing</li>
+          </motion.li>
+
+          <motion.li
+            initial={{
+              opacity: 0,
+              x: -80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 1,
+                delay: 0.8,
+              },
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
+            Mesmo que você não entenda nada de marketing
+          </motion.li>
         </ul>
 
-        <div className="mt-16 flex w-full flex-col gap-2 sm:flex-row sm:justify-center xl:justify-start">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mt-16 flex w-full flex-col gap-2 sm:flex-row sm:justify-center xl:justify-start"
+        >
           <motion.a
             href="#offer"
             initial="initial"
@@ -60,6 +162,9 @@ export function HeroSection() {
             whileTap={{ scale: 0.97 }}
             variants={{
               hover: { scale: 1.04 },
+            }}
+            viewport={{
+              once: true,
             }}
             className="bg-primary relative flex w-full cursor-pointer flex-col items-center justify-center gap-1 overflow-hidden rounded-full px-6 py-3 text-lg font-medium sm:w-auto sm:flex-row sm:text-xl"
           >
@@ -92,24 +197,49 @@ export function HeroSection() {
             whileHover={{
               scale: 1.04,
             }}
+            viewport={{
+              once: true,
+            }}
             type="button"
             className="w-full cursor-pointer rounded-full border border-white/40 py-3 text-center text-lg font-light text-white/80 sm:max-w-40"
           >
             Fale comigo
           </motion.a>
-        </div>
+        </motion.div>
       </div>
 
       <div className="flex items-center">
         <div className="relative">
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{
+              amount: 0.4,
+              once: true,
+            }}
             aria-hidden="true"
             src={linesImage}
             alt=""
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mask-b-from-50%"
           />
 
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{
+              amount: 0.4,
+              once: true,
+            }}
             aria-hidden="true"
             src={tattooArtistImage}
             alt=""

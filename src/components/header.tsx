@@ -34,7 +34,8 @@ export function Header() {
           </nav>
         </div>
 
-        <motion.button
+        <motion.a
+          href="#offer"
           whileHover={{
             scale: 1.06,
           }}
@@ -57,7 +58,7 @@ export function Header() {
             }}
           />
           Comprar agora
-        </motion.button>
+        </motion.a>
       </div>
     </header>
   );

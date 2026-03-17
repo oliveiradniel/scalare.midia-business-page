@@ -6,7 +6,9 @@ import whatsAppIcon from '../assets/images/whatsapp-green.svg';
 
 import { XIcon } from 'lucide-react';
 
-export function WhatsAppButton() {
+import { whatsappMessage } from '../utils/whatsapp-message';
+
+export function WhatsAppLink() {
   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
@@ -17,10 +19,13 @@ export function WhatsAppButton() {
     };
   }, []);
 
+  const whatsappText = whatsappMessage(
+    'Olá! Vi a página do Método Inktensity e gostaria de entender melhor como o método pode me ajudar.',
+  );
+
   return (
-    <button
+    <div
       aria-label="Fale comigo pelo WhatsApp"
-      type="button"
       className="fixed right-12 bottom-10 z-20"
     >
       <div className="relative">
@@ -61,7 +66,7 @@ export function WhatsAppButton() {
           )}
         </AnimatePresence>
 
-        <a href="#">
+        <a href={whatsappText} target="_blank" rel="noopener noreferrer">
           <motion.img
             whileHover={{
               rotate: [0, -10, 10, -10, 10, 0],
@@ -78,6 +83,6 @@ export function WhatsAppButton() {
           />
         </a>
       </div>
-    </button>
+    </div>
   );
 }

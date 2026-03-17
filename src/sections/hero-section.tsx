@@ -3,7 +3,13 @@ import { motion } from 'motion/react';
 import tattooArtistImage from '../assets/images/tattoo-artist.png';
 import linesImage from '../assets/images/lines.svg';
 
+import { whatsappMessage } from '../utils/whatsapp-message';
+
 export function HeroSection() {
+  const whatsappText = whatsappMessage(
+    'Olá! Sou tatuador e vi a página do Método Inktensity. Pode me explicar melhor como funciona?',
+  );
+
   return (
     <div
       id="home"
@@ -78,16 +84,19 @@ export function HeroSection() {
             />
           </motion.a>
 
-          <motion.button
+          <motion.a
+            href={whatsappText}
+            target="_blank"
+            rel="noopener noreferrer"
             whileTap={{ scale: 0.97 }}
             whileHover={{
               scale: 1.04,
             }}
             type="button"
-            className="w-full cursor-pointer rounded-full border border-white/40 py-3 text-lg font-light text-white/80 sm:max-w-40"
+            className="w-full cursor-pointer rounded-full border border-white/40 py-3 text-center text-lg font-light text-white/80 sm:max-w-40"
           >
             Fale comigo
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 

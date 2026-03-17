@@ -1,5 +1,10 @@
 import { Root, Item, Trigger, Content } from '@radix-ui/react-accordion';
+
+import { motion } from 'motion/react';
+
 import { MinusIcon, PlusIcon } from 'lucide-react';
+
+import { whatsappMessage } from '../utils/whatsapp-message';
 
 export function FAQSection() {
   const faq = [
@@ -47,6 +52,10 @@ export function FAQSection() {
     },
   ];
 
+  const whatsappText = whatsappMessage(
+    'Olá! Tenho uma dúvida sobre o Método Inktensity que não encontrei no FAQ. Pode me ajudar?',
+  );
+
   return (
     <div
       id="faq"
@@ -77,12 +86,19 @@ export function FAQSection() {
             faz sentido para o seu estúdio.
           </p>
 
-          <button
+          <motion.a
+            href={whatsappText}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileTap={{ scale: 0.97 }}
+            whileHover={{
+              scale: 1.04,
+            }}
             type="button"
-            className="bg-primary mt-2 w-full max-w-120 cursor-pointer rounded-full p-2 text-lg font-medium"
+            className="bg-primary mt-2 w-full max-w-120 cursor-pointer rounded-full p-2 text-center text-lg font-medium"
           >
             Fale comigo
-          </button>
+          </motion.a>
         </div>
       </div>
 

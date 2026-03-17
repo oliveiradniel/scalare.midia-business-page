@@ -1,5 +1,5 @@
 import { Header } from './components/header';
-import { WhatsAppButton } from './components/whatsapp-bottom';
+import { WhatsAppLink } from './components/whatsapp-link';
 import { FAQSection } from './sections/faq-section';
 import { AboutMeSection } from './sections/about-me-section';
 import { HeroSection } from './sections/hero-section';
@@ -10,7 +10,7 @@ import { OfferSection } from './sections/offer-section';
 export function App() {
   return (
     <div className="bg-background">
-      <WhatsAppButton />
+      <WhatsAppLink />
 
       <Header />
 

@@ -2,7 +2,9 @@ import { motion } from 'motion/react';
 
 import { navOptions } from '../data/nav-options';
 
+import bannerImage from '../assets/images/banner.png';
 import logoImage from '../assets/images/logo.png';
+
 import { Select } from './select';
 
 export function Header() {
@@ -18,12 +20,18 @@ export function Header() {
       }}
       className="fixed z-20 w-full p-4"
     >
-      <div className="border-primary/12 bg-background/40 mx-auto flex h-20 max-w-350 items-center justify-between rounded-full border p-4 backdrop-blur-2xl">
-        <div className="flex items-center gap-8">
+      <div className="border-primary/12 bg-background/40 mx-auto flex h-20 max-w-350 items-center justify-between gap-4 rounded-full border p-4 backdrop-blur-2xl">
+        <div className="flex items-center gap-4 sm:gap-8">
+          <img
+            src={bannerImage}
+            alt="Logo da Scalare Mídia"
+            className="hidden h-12 w-auto sm:flex"
+          />
+
           <img
             src={logoImage}
             alt="Logo da Scalare Mídia"
-            className="size-12"
+            className="h-12 w-auto sm:hidden"
           />
 
           <Select />
@@ -31,7 +39,7 @@ export function Header() {
           <nav aria-label="Menu principal" className="hidden md:flex">
             <ul className="flex items-center gap-4">
               {navOptions.map((option) => (
-                <li key={option.id}>
+                <li key={option.id} className="text-center">
                   <a
                     href={option.href}
                     className="hover:text-primary text-white transition-all ease-linear"
@@ -50,7 +58,7 @@ export function Header() {
             scale: 1.06,
           }}
           type="button"
-          className="bg-primary relative cursor-pointer overflow-hidden rounded-full p-2 px-3 font-medium"
+          className="bg-primary relative cursor-pointer overflow-hidden rounded-full p-2 px-3 text-center text-sm font-medium sm:text-base"
         >
           <motion.span
             className="absolute inset-0 blur-sm"

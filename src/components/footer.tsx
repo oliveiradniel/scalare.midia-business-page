@@ -45,7 +45,12 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <MailIcon className="text-primary size-4" />
 
-            <a href={emailLink} className="text-gray-400">
+            <a
+              href={emailLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400"
+            >
               {email}
             </a>
           </div>
@@ -53,7 +58,12 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <PhoneIcon className="text-primary size-4" />
 
-            <a href={whatsappText} className="text-gray-400">
+            <a
+              href={whatsappText}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400"
+            >
               {formatPhoneBR(String(phoneNumber))}
             </a>
           </div>
@@ -67,7 +77,12 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <img src={instagramIcon} alt="" className="size-6" />
 
-            <a href={instagramLink} className="text-gray-400">
+            <a
+              href={instagramLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400"
+            >
               {instagram}
             </a>
           </div>

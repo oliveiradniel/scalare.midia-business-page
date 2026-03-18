@@ -1,8 +1,11 @@
+import { motion } from 'motion/react';
+
 import { ArrowDownIcon } from 'lucide-react';
 
 import positionImage from '../assets/images/position.svg';
 import adsImage from '../assets/images/ads.svg';
 import cashImage from '../assets/images/cash.svg';
+import { TypeAnimation } from 'react-type-animation';
 
 export function InktensitySection() {
   const modules = [
@@ -110,21 +113,41 @@ export function InktensitySection() {
     >
       <div className="flex items-center gap-4">
         {badges.map((badge) => (
-          <span
+          <motion.span
+            initial={{ filter: 'blur(4px)' }}
+            whileInView={{
+              filter: 'blur(0)',
+              transition: {
+                duration: 1.4,
+              },
+            }}
+            viewport={{ once: true }}
             key={badge.id}
             className="border-primary/20 before:text-primary rounded-full border bg-[#161616] px-3 py-1 text-center text-xs text-gray-300 before:mr-1 before:content-['+']"
           >
             {badge.label}
-          </span>
+          </motion.span>
         ))}
       </div>
 
       <div className="flex max-w-260 flex-col gap-16 lg:flex-row">
         <div className="flex flex-1 flex-col gap-4">
-          <h2 className="text-center text-3xl text-white">
-            Conheça o método{' '}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-2xl text-white sm:text-3xl"
+          >
+            <TypeAnimation
+              sequence={['Conheça o método', 2000, 'Cresça com o método', 2000]}
+              repeat={Infinity}
+              wrapper="span"
+              speed={50}
+            />
+
             <i className="text-primary font-playfair">Inktensity</i>
-          </h2>
+          </motion.h2>
 
           <p className="text-center text-gray-400">
             Um sistema direto ao ponto criado para ajudar tatuadores a
@@ -144,41 +167,89 @@ export function InktensitySection() {
         </div>
 
         <div className="flex flex-1 flex-col justify-between gap-4">
-          <h3 className="text-center text-2xl text-white">
+          <motion.h3
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-center text-2xl text-white"
+          >
             Seus fundamentos consistem em 3 pilares:
-          </h3>
+          </motion.h3>
 
           <div className="flex flex-col gap-2">
-            {modules.map((module, index) => (
-              <div
-                key={module.id}
-                className="rounded-full border border-gray-600 px-4 py-2"
-              >
-                <h4 className="text-center text-base font-thin text-gray-300">
-                  {index + 1}. {module.title}
-                </h4>
-              </div>
-            ))}
+            {modules.map((module, index) => {
+              const delay = 0.3 * index;
+
+              return (
+                <motion.div
+                  initial={{ opacity: 0, x: 80 }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: 1,
+                      delay,
+                    },
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  key={module.id}
+                  className="rounded-full border border-gray-600 px-4 py-2"
+                >
+                  <h4 className="text-center text-base font-thin text-gray-300">
+                    {index + 1}. {module.title}
+                  </h4>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      <h2 className="mt-8 text-center text-5xl text-white">
+      <motion.h2
+        initial={{ opacity: 0, y: -80 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+          },
+        }}
+        viewport={{ once: true }}
+        className="mt-8 text-center text-5xl text-white"
+      >
         O que você vai{' '}
         <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text text-transparent">
           aprender
         </i>
         ?
-      </h2>
+      </motion.h2>
 
       <div className="flex w-full flex-col gap-12 rounded-lg bg-white/6 mask-r-from-96% mask-l-from-90% p-8 md:gap-4">
         {contents.map((content, index) => (
           <div
             key={`content-${index}`}
-            className="flex flex-col items-center gap-6 md:flex-row md:gap-2"
+            className="flex flex-col items-center gap-6 overflow-hidden md:flex-row md:gap-2"
           >
             <div className="flex flex-1 justify-center">
-              <img
+              <motion.img
+                initial={{ filter: 'blur(4px)' }}
+                whileInView={{
+                  filter: 'blur(0px)',
+                  transition: {
+                    duration: 1,
+                  },
+                }}
+                viewport={{ once: true }}
                 aria-hidden="true"
                 src={content.img}
                 alt=""
@@ -186,7 +257,18 @@ export function InktensitySection() {
               />
             </div>
 
-            <div className="bg-background/30 flex-3 rounded-lg border border-white/10 p-4 md:mask-r-from-80%">
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 1,
+                },
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-background/30 flex-3 rounded-lg border border-white/10 p-4 md:mask-r-from-80%"
+            >
               <span className="bg-primary rounded-full px-3 py-1 text-xs font-medium">
                 Módulo {index + 1}
               </span>
@@ -202,29 +284,56 @@ export function InktensitySection() {
                   <li>{classroom}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
 
-      <h2 className="mt-8 text-center text-4xl text-white">
+      <motion.h2
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1,
+          },
+        }}
+        viewport={{
+          once: true,
+        }}
+        className="mt-8 text-center text-4xl text-white"
+      >
         Está achando que acabou? Temos alguns{' '}
         <i className="font-playfair from-primary bg-linear-to-r to-white bg-clip-text text-transparent">
           bônus
         </i>
-      </h2>
+      </motion.h2>
 
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        {bonus.map((b) => (
-          <div
-            key={b.id}
-            className="flex flex-col justify-between gap-4 rounded-lg bg-white p-4"
-          >
-            <h4 className="text-background">🎁 {b.label}</h4>
+        {bonus.map((b, index) => {
+          const delay = index * 0.2;
 
-            <p className="text-gray-400">{b.headline}</p>
-          </div>
-        ))}
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1,
+                  delay,
+                },
+              }}
+              viewport={{ once: true }}
+              key={b.id}
+              className="flex flex-col justify-between gap-4 rounded-lg bg-white p-4"
+            >
+              <h4 className="text-background">🎁 {b.label}</h4>
+
+              <p className="text-gray-400">{b.headline}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

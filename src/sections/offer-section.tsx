@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 import offerImage from '../assets/images/offer.svg';
 import sealImage from '../assets/images/seal.svg';
 import checkBoxImage from '../assets/images/check-box.svg';
@@ -15,26 +17,68 @@ export function OfferSection() {
     <div id="offer" className="flex scroll-mt-20 flex-col items-center px-4">
       <div className="bg-primary/40 my-8 h-[0.6px] w-full mask-x-from-90%" />
 
-      <small className="text-center text-gray-400 before:mr-2 before:content-['['] after:ml-2 after:content-[']']">
+      <motion.small
+        initial={{ opacity: 0, scale: 1.2 }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 1,
+          },
+        }}
+        viewport={{ once: true }}
+        className="text-center text-gray-400 before:mr-2 before:content-['['] after:ml-2 after:content-[']']"
+      >
         NÃO PERCA MAIS TEMPO E DINHEIRO!
-      </small>
+      </motion.small>
 
-      <h2 className="mt-4 text-3xl text-white">
+      <motion.h2
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 2,
+          },
+        }}
+        viewport={{ once: true }}
+        className="mt-4 text-3xl text-white"
+      >
         Quanto valer ter{' '}
         <span className="from-primary bg-linear-to-r to-white bg-clip-text font-medium text-transparent">
           clientes chegando todos os dias
         </span>
         ?
-      </h2>
+      </motion.h2>
 
-      <p className="mt-4 max-w-200 text-center text-gray-400">
+      <motion.p
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 2,
+          },
+        }}
+        viewport={{ once: true }}
+        className="mt-4 max-w-200 text-center text-gray-400"
+      >
         Uma única tatuagem que você fechar já pode pagar esse treinamento
         inteiro. Agora imagine aprender um método que pode te ajudar a gerar
         pedidos de orçamento constantemente usando Instagram e anúncios simples.
-      </p>
+      </motion.p>
 
       <div className="mt-16 flex w-full max-w-260 flex-col justify-between gap-16 lg:flex-row">
-        <div className="border-primary/40 rounded-lg border">
+        <motion.div
+          initial={{ opacity: 0, filter: 'blur(4px)' }}
+          whileInView={{
+            opacity: 1,
+            filter: 'blur(0px)',
+            transition: { duration: 1.4 },
+          }}
+          viewport={{ once: true }}
+          className="border-primary/40 rounded-lg border"
+        >
           <div className="flex flex-col gap-4 p-4">
             <div className="flex items-center gap-4">
               <div className="rounded-lg bg-white/90 p-2">
@@ -70,7 +114,11 @@ export function OfferSection() {
           <div className="bg-primary/20 h-[0.3px] w-full" />
 
           <div className="flex flex-col p-4">
-            <div className="mb-2">
+            <span className="mb-2 text-gray-400">
+              Ou 12x de <strong>R$ 15,20</strong>
+            </span>
+
+            <div className="mb-6">
               <span className="text-gray-400">Por</span>{' '}
               <strong className="from-primary bg-linear-to-r to-white bg-clip-text text-2xl font-bold text-transparent">
                 R$ 147,00
@@ -79,10 +127,6 @@ export function OfferSection() {
                 /uma única vez
               </span>
             </div>
-
-            <span className="mb-4 text-gray-400">
-              Ou 12x de <strong>R$ 15,20</strong>
-            </span>
 
             <ul className="mb-4 flex flex-col gap-3">
               {advantages.map((advantage, index) => (
@@ -115,7 +159,7 @@ export function OfferSection() {
               />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col items-center">
           <p className="text-center text-gray-400">
@@ -127,7 +171,15 @@ export function OfferSection() {
             <strong className="text-primary">7 dias</strong>.
           </p>
 
-          <img
+          <motion.img
+            whileInView={{
+              rotateY: [0, 180, 360],
+              transition: {
+                duration: 2,
+                ease: 'easeInOut',
+              },
+            }}
+            viewport={{ amount: 0.3, once: true }}
             aria-hidden="true"
             src={sealImage}
             alt=""

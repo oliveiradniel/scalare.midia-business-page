@@ -216,7 +216,7 @@ export function InktensitySection() {
       </div>
 
       <motion.h2
-        initial={{ opacity: 0, y: -80 }}
+        initial={{ opacity: 0, y: 80 }}
         whileInView={{
           opacity: 1,
           y: 0,
@@ -234,7 +234,17 @@ export function InktensitySection() {
         ?
       </motion.h2>
 
-      <div className="flex w-full flex-col gap-12 rounded-lg bg-white/6 mask-r-from-96% mask-l-from-90% p-8 md:gap-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: {
+            duration: 1,
+          },
+        }}
+        viewport={{ once: true }}
+        className="flex w-full flex-col gap-12 rounded-lg bg-white/6 mask-r-from-96% mask-l-from-90% p-8 md:gap-4"
+      >
         {contents.map((content, index) => (
           <div
             key={`content-${index}`}
@@ -287,13 +297,13 @@ export function InktensitySection() {
             </motion.div>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       <motion.h2
-        initial={{ opacity: 0, x: 80 }}
+        initial={{ opacity: 0, y: 80 }}
         whileInView={{
           opacity: 1,
-          x: 0,
+          y: 0,
           transition: {
             duration: 1,
           },
@@ -320,7 +330,7 @@ export function InktensitySection() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 1,
+                  duration: 2,
                   delay,
                 },
               }}

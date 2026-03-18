@@ -63,36 +63,69 @@ export function FAQSection() {
     >
       <div className="flex flex-1 flex-col gap-2 lg:gap-16">
         <div className="flex flex-col items-center gap-2 lg:items-start">
-          <span className="border-primary/20 before:text-primary w-full max-w-20 rounded-full border bg-[#161616] px-3 py-1 text-center text-xs text-gray-300">
+          <motion.span
+            initial={{ filter: 'blur(4px)' }}
+            whileInView={{
+              filter: 'blur(0px)',
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{ once: true }}
+            className="border-primary/20 before:text-primary w-full max-w-20 rounded-full border bg-[#161616] px-3 py-1 text-center text-xs text-gray-300"
+          >
             FAQ
-          </span>
+          </motion.span>
 
-          <h2 className="text-center text-3xl text-white">
+          <motion.h2
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            viewport={{ once: true }}
+            className="text-center text-3xl text-white"
+          >
             Perguntas{' '}
             <span className="from-primary bg-linear-to-r to-white bg-clip-text font-medium text-transparent">
               Frequentes
             </span>
-          </h2>
+          </motion.h2>
         </div>
 
         <div className="flex flex-col items-center gap-2 lg:items-start">
-          <p className="text-center text-white lg:text-start">
+          <motion.p
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            viewport={{ once: true }}
+            className="text-center text-white lg:text-start"
+          >
             Ainda está com alguma dúvida antes de começar?
-          </p>
+          </motion.p>
 
-          <p className="text-center text-gray-400 lg:text-start">
+          <motion.p
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            viewport={{ once: true }}
+            className="text-center text-gray-400 lg:text-start"
+          >
             Se sua pergunta não apareceu aqui, pode falar diretamente comigo. Eu
             mesmo vou te responder e te ajudar a entender se o Método Inktensity
             faz sentido para o seu estúdio.
-          </p>
+          </motion.p>
 
           <motion.a
             href={whatsappText}
             target="_blank"
             rel="noopener noreferrer"
+            initial={{ filter: 'blur(4px)' }}
+            whileInView={{
+              filter: 'blur(0px)',
+              transition: {
+                duration: 1,
+              },
+            }}
+            viewport={{ once: true }}
             whileTap={{ scale: 0.97 }}
             whileHover={{
-              scale: 1.04,
+              scale: 1.02,
             }}
             type="button"
             className="bg-primary mt-2 w-full max-w-120 cursor-pointer rounded-full p-2 text-center text-lg font-medium"
@@ -102,24 +135,47 @@ export function FAQSection() {
         </div>
       </div>
 
-      <Root type="multiple" className="w-full flex-1">
-        {faq.map((f) => (
-          <Item
-            key={f.id}
-            value={f.id}
-            className="border-primary/40 data-[state=open]:bg-primary/10 mt-1 flex flex-col gap-2 rounded-lg border px-6 py-3 first:mt-0"
-          >
-            <Trigger className="data-[state=open]:text-primary group flex cursor-pointer items-center justify-between text-start text-white">
-              {f.question}
+      <Root type="multiple" className="w-full flex-1 overflow-hidden">
+        {faq.map((f, index) => {
+          const delay = index * 0.2;
 
-              <PlusIcon className="size-4 group-data-[state=open]:hidden" />
-              <MinusIcon className="hidden size-4 group-data-[state=open]:flex" />
-            </Trigger>
-            <Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-sm text-gray-400">
-              {f.response}
-            </Content>
-          </Item>
-        ))}
+          return (
+            <Item
+              asChild
+              key={f.id}
+              value={f.id}
+              className="border-primary/40 data-[state=open]:bg-primary/10 mt-1 flex flex-col gap-2 rounded-lg border px-6 py-3 first:mt-0"
+            >
+              <motion.div
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                    delay,
+                  },
+                }}
+                viewport={{ once: true }}
+              >
+                <Trigger
+                  asChild
+                  className="data-[state=open]:text-primary group flex cursor-pointer items-center justify-between text-start text-white"
+                >
+                  <div>
+                    {f.question}
+
+                    <PlusIcon className="size-4 group-data-[state=open]:hidden" />
+                    <MinusIcon className="hidden size-4 group-data-[state=open]:flex" />
+                  </div>
+                </Trigger>
+                <Content className="data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-sm text-gray-400">
+                  <div>{f.response}</div>
+                </Content>
+              </motion.div>
+            </Item>
+          );
+        })}
       </Root>
     </div>
   );

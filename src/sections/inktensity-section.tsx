@@ -166,7 +166,7 @@ export function InktensitySection() {
           </a>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between gap-4">
+        <div className="flex flex-1 flex-col justify-between gap-4 overflow-x-hidden">
           <motion.h3
             initial={{ opacity: 0, x: 80 }}
             whileInView={{

@@ -9,10 +9,11 @@ export const navOptions = [
     label: 'Módulos',
     href: '#modules',
   },
+
   {
-    id: 'testimonials',
-    label: 'Depoimentos',
-    href: '#testimonials',
+    id: 'about-me',
+    label: 'Sobre mim',
+    href: '#about-me',
   },
   {
     id: 'faq',
@@ -20,8 +21,8 @@ export const navOptions = [
     href: '#faq',
   },
   {
-    id: 'about-me',
-    label: 'Sobre mim',
-    href: '#about-me',
+    id: 'testimonials',
+    label: 'Depoimentos',
+    href: '#testimonials',
   },
 ];

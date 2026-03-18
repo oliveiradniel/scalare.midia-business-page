@@ -42,7 +42,7 @@ export function OfferSection() {
           },
         }}
         viewport={{ once: true }}
-        className="mt-4 text-3xl text-white"
+        className="mt-4 text-center text-3xl text-white"
       >
         Quanto valer ter{' '}
         <span className="from-primary bg-linear-to-r to-white bg-clip-text font-medium text-transparent">

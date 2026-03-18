@@ -31,7 +31,7 @@ export function Header() {
           <nav aria-label="Menu principal" className="hidden md:flex">
             <ul className="flex items-center gap-4">
               {navOptions.map((option) => (
-                <li>
+                <li key={option.id}>
                   <a
                     href={option.href}
                     className="hover:text-primary text-white transition-all ease-linear"

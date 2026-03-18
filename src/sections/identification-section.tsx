@@ -100,7 +100,7 @@ export function IdentificationSection() {
         </ul>
       </motion.div>
 
-      <div className="mx-auto mt-16 flex max-w-220 flex-col items-center gap-8 sm:flex-row">
+      <div className="mx-auto mt-16 flex max-w-220 flex-col items-center gap-8 overflow-x-hidden sm:flex-row">
         <motion.h3
           initial={{ opacity: 0, x: -80 }}
           whileInView={{

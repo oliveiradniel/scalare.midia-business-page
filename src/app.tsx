@@ -6,6 +6,7 @@ import { HeroSection } from './sections/hero-section';
 import { IdentificationSection } from './sections/identification-section';
 import { InktensitySection } from './sections/inktensity-section';
 import { OfferSection } from './sections/offer-section';
+import { TestimonialsSection } from './sections/testimonials-section';
 
 export function App() {
   return (
@@ -19,8 +20,9 @@ export function App() {
         <IdentificationSection />
         <InktensitySection />
         <OfferSection />
-        <FAQSection />
         <AboutMeSection />
+        <TestimonialsSection />
+        <FAQSection />
       </main>
     </div>
   );

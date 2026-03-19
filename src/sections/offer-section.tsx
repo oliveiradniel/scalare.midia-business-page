@@ -105,7 +105,7 @@ export function OfferSection() {
             <div>
               <span className="text-gray-400">De</span>{' '}
               <strong className="from-primary bg-linear-to-r to-white bg-clip-text text-2xl font-bold text-transparent line-through">
-                R$ 497,00
+                R$ 297,00
               </strong>{' '}
               <span className="text-sm font-normal text-gray-400">/anual</span>
             </div>

@@ -1,4 +1,4 @@
-export const phoneNumber = 5516992961586;
+export const phoneNumber = 5516994045245;
 export const email = 'scalaremidia@gmail.com';
 export const instagram = 'scalaremidia';
 

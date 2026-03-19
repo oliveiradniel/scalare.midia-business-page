@@ -243,7 +243,7 @@ export function InktensitySection() {
           },
         }}
         viewport={{ once: true }}
-        className="flex w-full flex-col gap-12 rounded-lg bg-black mask-r-from-96% mask-l-from-90% p-8 md:gap-4"
+        className="flex w-full flex-col gap-12 rounded-lg bg-black mask-r-from-96% p-0 md:gap-4 md:mask-l-from-90% md:p-8"
       >
         {contents.map((content, index) => (
           <div

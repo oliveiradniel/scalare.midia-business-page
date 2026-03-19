@@ -87,17 +87,17 @@ export function InktensitySection() {
       label: '50 ideias de posts para tatuadores',
       headline: 'Para nunca ficar sem conteúdo no Instagram',
     },
-    {
-      id: 'scripts',
-      label: 'Scripts prontos para responder clientes',
-      headline:
-        'Mensagens prontas para responder orçamento e fechar mais tattoos',
-    },
-    {
-      id: 'structure',
-      label: 'Estrutura de anúncios para copiar',
-      headline: 'Modelos simples de campanhas que você pode usar',
-    },
+    // {
+    //   id: 'scripts',
+    //   label: 'Scripts prontos para responder clientes',
+    //   headline:
+    //     'Mensagens prontas para responder orçamento e fechar mais tattoos',
+    // },
+    // {
+    //   id: 'structure',
+    //   label: 'Estrutura de anúncios para copiar',
+    //   headline: 'Modelos simples de campanhas que você pode usar',
+    // },
     {
       id: 'checklist',
       label: 'Checklist do perfil que atrai clientes',
@@ -319,7 +319,7 @@ export function InktensitySection() {
         </i>
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="flex gap-2">
         {bonus.map((b, index) => {
           const delay = index * 0.2;
 
@@ -336,7 +336,7 @@ export function InktensitySection() {
               }}
               viewport={{ once: true }}
               key={b.id}
-              className="flex flex-col justify-between gap-4 rounded-lg bg-white p-4"
+              className="flex w-full max-w-200 flex-col justify-between gap-4 rounded-lg bg-white p-4"
             >
               <h4 className="text-background">🎁 {b.label}</h4>
 

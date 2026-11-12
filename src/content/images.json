@@ -1,0 +1,190 @@
+{
+  "hero-tatuador-scalare": {
+    "width": 1600,
+    "height": 1342,
+    "hash": "10d86863",
+    "widths": [
+      360,
+      480,
+      640,
+      960,
+      1280
+    ],
+    "fallback": "png",
+    "fallbackWidth": 640
+  },
+  "rafael-souza-estrategista-trafego": {
+    "width": 1600,
+    "height": 2000,
+    "hash": "aca30d48",
+    "widths": [
+      400,
+      480,
+      720,
+      960
+    ],
+    "fallback": "png",
+    "fallbackWidth": 480
+  },
+  "logo-scalare-simbolo": {
+    "width": 2000,
+    "height": 2000,
+    "hash": "7a86c7c0",
+    "widths": [
+      48,
+      96,
+      144
+    ],
+    "fallback": "png",
+    "fallbackWidth": 96
+  },
+  "logo-scalare-horizontal": {
+    "width": 1080,
+    "height": 300,
+    "hash": "e9919d32",
+    "widths": [
+      180,
+      360,
+      540
+    ],
+    "fallback": "png",
+    "fallbackWidth": 360
+  },
+  "selo-garantia-7-dias": {
+    "width": 2133,
+    "height": 2133,
+    "hash": "be3b10ed",
+    "widths": [
+      320,
+      640
+    ],
+    "fallback": "png",
+    "fallbackWidth": 320
+  },
+  "depoimento-01": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "d257ed03",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-02": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "d05d2ceb",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-03": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "185676b1",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-04": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "67025036",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-05": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "e6cbaea8",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-06": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "4dfdf98a",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-07": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "485f386c",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-08": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "2d3fcb37",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  },
+  "depoimento-09": {
+    "width": 1179,
+    "height": 1456,
+    "hash": "c5264c8e",
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1179
+    ],
+    "fallback": "jpg",
+    "fallbackWidth": 480
+  }
+}

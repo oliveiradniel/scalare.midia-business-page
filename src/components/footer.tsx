@@ -1,93 +1,86 @@
 import { MailIcon, PhoneIcon } from 'lucide-react';
-import bannerImage from '../assets/images/banner.png';
-import instagramIcon from '../assets/images/instagram.svg';
 
-import { formatPhoneBR } from '../utils/format-phone-br';
+import instagramIcon from '#/assets/icons/instagram.svg';
+import { brand, contact, links, messages, nav, whatsapp } from '#/content/site';
+import { Img } from '#/components/img';
+import { Container, SmartLink } from '#/components/ui';
 
-import {
-  email,
-  emailLink,
-  instagram,
-  instagramLink,
-  phoneNumber,
-} from '../data/personal-informations';
-import { whatsappMessage } from '../utils/whatsapp-message';
+const titleClass = 'text-sm font-bold tracking-[0.14em] text-white uppercase';
+const linkClass = 'hover:text-primary text-gray-400 transition-colors';
 
 export function Footer() {
-  const whatsappText = whatsappMessage(
-    'Olá! Queria saber mais sobre a Scalare Mídia e seus serviços.',
-  );
-
   return (
-    <footer className="w-full px-4 pb-8">
-      <div className="mx-auto flex w-full max-w-350 flex-col gap-16 md:flex-row">
-        <div className="flex flex-1 flex-col items-center gap-2 md:items-start">
-          <img src={bannerImage} alt="" className="mb-8 h-auto w-42 md:mb-0" />
-
-          <p className="text-center text-sm text-gray-400 md:text-start">
-            A Scalare Mídia é uma agência focada em crescimento digital,
-            especializada em posicionar marcas e atrair clientes por meio de
-            estratégias inteligentes de marketing. Com uma abordagem orientada a
-            resultados, ajuda empresas a ganharem visibilidade, aumentarem sua
-            presença online e escalarem suas vendas de forma consistente.
-          </p>
-
-          <small className="text-primary text-center md:text-start">
-            &copy; Todos os direitos reservados a Scalare Mídia
-          </small>
-        </div>
-
-        <div className="flex flex-1 flex-col items-center gap-2 md:items-start">
-          <h3 className="mb-4 text-center text-xl font-medium text-white md:text-start">
-            Contato
-          </h3>
-
-          <div className="flex items-center gap-2">
-            <MailIcon className="text-primary size-4" />
-
-            <a
-              href={emailLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400"
-            >
-              {email}
-            </a>
+    <footer className="border-t border-white/10 pt-16 pb-10">
+      <Container>
+        <div className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
+          <div className="flex flex-col items-center gap-5 text-center md:items-start md:text-start">
+            <Img
+              name="logo-scalare-horizontal"
+              sizes="168px"
+              alt="Scalare Mídia"
+              className="h-auto w-42"
+            />
+            <p className="max-w-sm text-sm text-gray-400">{brand.description}</p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <PhoneIcon className="text-primary size-4" />
+          <nav aria-label="Rodapé" className="flex flex-col items-center gap-4 md:items-start">
+            <h2 className={titleClass}>Navegação</h2>
+            <ul className="flex flex-col items-center gap-2 md:items-start">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className={linkClass}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            <a
-              href={whatsappText}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400"
-            >
-              {formatPhoneBR(String(phoneNumber))}
-            </a>
+          <div className="flex flex-col items-center gap-4 md:items-start">
+            <h2 className={titleClass}>Contato</h2>
+            <ul className="flex flex-col items-center gap-3 md:items-start">
+              <li className="flex items-center gap-2">
+                <MailIcon className="text-primary size-4" aria-hidden="true" />
+                <a href={links.email} className={linkClass}>
+                  {contact.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <PhoneIcon className="text-primary size-4" aria-hidden="true" />
+                <SmartLink
+                  href={whatsapp(messages.footer)}
+                  aria-label={`WhatsApp ${contact.phoneDisplay} (abre em nova aba)`}
+                  className={linkClass}
+                >
+                  {contact.phoneDisplay}
+                </SmartLink>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 md:items-start">
+            <h2 className={titleClass}>Instagram</h2>
+            <div className="flex items-center gap-2">
+              <img src={instagramIcon} alt="" aria-hidden="true" className="size-6" />
+              <SmartLink me href={links.instagram} className={linkClass}>
+                @{contact.instagram}
+              </SmartLink>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col items-center gap-2 md:items-start">
-          <h3 className="mb-4 text-center text-xl font-medium text-white md:text-start">
-            Instagram
-          </h3>
-
-          <div className="flex items-center gap-2">
-            <img src={instagramIcon} alt="" className="size-6" />
-
-            <a
-              href={instagramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400"
-            >
-              {instagram}
-            </a>
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-center md:flex-row md:text-start">
+          <div className="flex flex-col items-center gap-1 md:items-start">
+            <small className="text-primary/80 text-sm">
+              &copy; {new Date().getFullYear()} {brand.name}. Todos os direitos reservados.
+            </small>
+            <small className="text-sm text-gray-400">
+              {brand.legalName} · CNPJ {brand.taxId}
+            </small>
           </div>
+          <small className="text-sm text-gray-400">Método Inktensity</small>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

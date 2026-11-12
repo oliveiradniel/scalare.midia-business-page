@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inktensity.scalaremidia.com.br/sitemap.xml
